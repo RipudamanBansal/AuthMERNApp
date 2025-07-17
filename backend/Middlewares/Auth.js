@@ -6,7 +6,7 @@ const ensureAuthenticated = (req, res, next) => {
   if (!auth) {
     return res
       .status(401)
-      .json({ message: "Unauthorized, JWT token is require" });
+      .json({ message: "Unauthorized, JWT token is required" });
   }
   try {
     const decoded = jwt.verify(auth, process.env.JWT_SECRET);
